@@ -1,0 +1,304 @@
+
+<html><head>
+<title>Pocket Porn</title>
+<script>
+
+function log2event(txt, nextURL) {
+	var xhr = new XMLHttpRequest();
+	var url = '/logging/log2event.php?operator=MSISDN&campaign_id=61&step=MSISDN&country=PT&page_id=61&event=' + txt
+	    + '&pft=' + encodeURI(JSON.stringify(performance.timing))
+	    + "&res=" + encodeURI(window.screen.width + "x" + window.screen.height);
+	if (txt == "Subscribe") postback();
+	if (nextURL != "") xhr.onreadystatechange = function() {if (xhr.readyState === 4 && xhr.status === 200) window.location.href = nextURL;}
+	xhr.open('GET', url );
+	xhr.send();
+}
+
+    log2event('VisitMSISDN',"");
+
+    window.onload = function() {
+        setTimeout(function() {
+            log2event("FullLoadMSISDN", "");
+        }, 0);
+    };
+
+
+function postback()
+{
+    var img = document.createElement('img');
+    img.src = "http://yjxol.adsb4trk.com/trackpixel/track?tid=";
+    document.body.appendChild(img);
+}
+</script>
+<meta name="viewport" content="width=device-width">
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<link rel="icon" href="data:;base64,=">
+<style>
+body {
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+    max-width: 768px;
+    margin: 0 auto;
+    font-family: "Gill Sans MT", "Trebuchet MS", sans-serif;
+    font-size: 12px
+}
+a {
+    text-decoration: none;
+    color: #000
+}
+.container {
+    max-width: 425px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+.logo {
+    width: 50%;
+    margin: 0 auto 6px
+}
+.logo img {
+    max-width: 100%;
+    height: auto
+}
+
+.main-content img {
+    max-width: 90%;
+    margin-bottom: 10px;
+    height: auto
+}
+p {
+    font-size: 12px;
+    margin: 5px auto
+}
+
+.cancel {
+    background-color: grey;
+    border: 0;
+    width: 100px;
+    color: #fff
+}
+
+.overlay {
+  background:rgba(0,0,0,0.89);
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  position: fixed;
+  color: white;
+}
+
+.btn {
+    width: 100%;
+    margin: 10px auto 0;
+}
+
+.btn h1 {
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    max-width: 120px;
+    padding: 10px 10px;
+    margin: 0 auto;
+    color: #FFF;
+    font-size: 22px;
+    font-family: 'Oswald', sans-serif;
+    background-color: #20A900;
+    border-bottom: solid 3px #4E771C;
+    border-bottom-left: solid 3px #4E771C;
+    border-bottom-right: solid 3px #4E771C;
+    border-radius: 3px;
+}
+
+.btn h1 a {
+    color: inherit;
+}
+
+.btn.step1 {
+    margin: 10px auto 0;
+    text-align: center;
+}
+
+.btn.step1 h1 {
+    display: inline-block;
+    margin: 0 1%;
+    width: 46%;
+}
+
+.btn.step1 h1 span {
+    font-size: 15px;
+}
+
+.btn.sair{
+    background-color: red;
+    border-bottom: solid 3px red;
+    border-bottom-left: solid 3px red;
+    border-bottom-right: solid 3px red;
+}
+
+.btn.btn-cancel{
+    background-color: #868686;
+	font-size: 12px;
+	width: 100px;
+	border: 1px solid transparent;
+	color: white;
+}
+
+
+.btn-default {
+    padding: 5px 12px 7px;
+    background-color: #20A900;
+    border: 0;
+    border-bottom: solid 3px #4E771C;
+    color: #fff;
+    width: 90%;
+    display: inline;
+    margin-bottom: 0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: 4px
+}
+
+.cost {
+    font-family:'Oswald', sans-serif;
+    text-align: center;
+}
+
+
+/* oswald-300 - latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/oswald-v16-latin-300.eot'); /* IE9 Compat Modes */
+  src: local('Oswald Light'), local('Oswald-Light'),
+       url('../fonts/oswald-v16-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/oswald-v16-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/oswald-v16-latin-300.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/oswald-v16-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/oswald-v16-latin-300.svg#Oswald') format('svg'); /* Legacy iOS */
+}
+/* oswald-regular - latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/oswald-v16-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Oswald Regular'), local('Oswald-Regular'),
+       url('../fonts/oswald-v16-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/oswald-v16-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/oswald-v16-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/oswald-v16-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/oswald-v16-latin-regular.svg#Oswald') format('svg'); /* Legacy iOS */
+}
+/* oswald-700 - latin */
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/oswald-v16-latin-700.eot'); /* IE9 Compat Modes */
+  src: local('Oswald Bold'), local('Oswald-Bold'),
+       url('../fonts/oswald-v16-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/oswald-v16-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/oswald-v16-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/oswald-v16-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/oswald-v16-latin-700.svg#Oswald') format('svg'); /* Legacy iOS */
+}
+</style>
+
+</head><body>
+
+<div id="overlay" class="overlay">
+    <div>
+            <h1 class="btn step1">
+                <span id="texte" class="texte">Esta &eacute; uma p&aacute;gina de conte&uacute;do adulto. Confirma que &eacute; maior de idade?</span>
+            </h1>
+    </div>
+    <div class="btn step1" id="btn-form">
+            <h1 onclick="show_subscrever();">
+                <a id="yesBtn"  href="javascript:void(0);">Sim, tenho mais de 18 anos</a>
+            </h1>
+            <br/><br/>
+            <h1 class="btn sair">
+                <a id="noBtn" class="btn sair" href="http://google.pt">N&atilde;o, n&atilde;o tenho mais de 18 anos</a>
+            </h1>
+    </div>
+</div>
+
+
+
+<div class="container">
+<div>
+	<p style="float:left;margin-left:10px;">
+Views:<br>83233	</p>
+	<p style="float:right;margin-right:10px;color:gold;font-size:12px;font-weight:bold;">
+&#9733;&#9733;&#9733;&#9733;&#9734;
+	</p>
+	<div>
+		<center><img width="50%" src="/img/logo.jpg" alt="logo"></center>
+	</div>
+</div>
+
+
+<!-- <div>
+<p style="float:left;margin-left:10px;">Views:<br>83233</p><p class="logo"><img src="/img/logo.jpg" alt="logo"></p><p style="float:right;margin-right:10px;color:gold;">★★★★☆</p>
+    </div> -->
+    <div class="main-content">
+        <img src="/img/lpimage01.jpg"/>
+    </div>
+<div class="footer">
+<a href="http://pocketporn.tv/">Pocket Porn</a> - Disfrute das atrizes porno mais gostosas em HD no seu Android 
+<br><br>
+<div>Ser&aacute; deduzido semanalmente um valor da sua conta de telem&oacute;vel.<br>Indique o n&uacute;mero de telem&oacute;vel para continuar:</div>	<form action="/soap/subscribe.php" method="post">
+	<div>
+	<input type="hidden" name="welcome" value="http://pocketporn.tv/welcome"/>
+	<input type="tel" maxlength="9" name="msisdn" autofocus placeholder="o seu n&#xBA; tlm"/><br><br>	<button class="btn btn-default" onclick="log2event('MSISDN','');">Continuar</button></div>
+<div>Ap&oacute;s confirmar receber&aacute; um c&oacute;digo de confirma&ccedil;&atilde;o por SMS.	<div style="background: lightgrey;">
+	<center><p>Um servi&ccedil;o Pocketporn</p></center>
+		<div id="textbox">
+			<p style="float:left;margin-left:10px;">
+				Apoio a cliente:<br>707450201
+			</p>
+			<p style="float:right;margin-right:10px;">
+				<input type="button" name="cancel" value="Cancelar" onclick="window.location.href='https://www.google.pt/'">
+			</p>
+			<div class="footerMenu">
+				<a href="http://pocketporn.tv/">Home</a> | <a href="http://pocketporn.tv/termsandconditions">Termos e Condi&ccedil;&otilde;es</a>
+			</div>
+		</div>
+		<div style="clear: both;"></div>
+	</div>
+	</form>
+</div>
+<script>
+function setCookie(cname, cvalue, exdays, path) 
+{
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=" + path;
+}
+
+function show_subscrever()
+{
+    document.getElementById("overlay").style.display = "none";
+    var date = new Date();
+    var timeinmillis = date.getUTCMilliseconds();
+    setCookie('pocket_p_av', timeinmillis, 365, '/');
+}
+</script>
+</body>
+</html>
